@@ -1,24 +1,3 @@
-# README
+# Rails Pix
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Studying ruby on rails I decided to recreate my Ruby-Pix CLI project for the Web, using tests (RSpec), PostgreSQL and later, Docker.
