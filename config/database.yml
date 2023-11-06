@@ -23,7 +23,7 @@ default: &default
 
 development:
   <<: *default
-  database:
+  database: rails_pix_development
 
 test:
   <<: *default
