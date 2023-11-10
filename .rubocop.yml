@@ -2,3 +2,5 @@ AllCops:
   Exclude:
     - 'bin/bundle'
     - 'config/environments/development.rb'
+    - 'db/schema.rb'
+    - 'db/migrate'
