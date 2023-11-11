@@ -10,5 +10,6 @@ end
 
 # Transaction model
 class Transaction < ApplicationRecord
+  validates :payer, :receiver, :price, presence: true
   validates_with TransactionValidator
 end
