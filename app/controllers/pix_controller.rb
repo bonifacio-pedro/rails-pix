@@ -2,7 +2,7 @@
 
 # User Pix Controller
 class PixController < ApplicationController
-  skip_before_action :verify_authenticity_token, only: [:create, :destroy]
+  skip_before_action :verify_authenticity_token, only: %i[create destroy]
   def index
     render json: UserPix.all
   end
