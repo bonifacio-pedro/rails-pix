@@ -5,6 +5,7 @@ class TransactionValidator < ActiveModel::Validator
   def validate(record)
     record.errors.add :name, 'Invalid payer key' if UserPix.where(id: record.payer).empty?
     record.errors.add :name, 'Invalid receiver key' if UserPix.where(id: record.receiver).empty?
+    record.errors.add :name, 'Payer equals to receiver key' if record.payer == record.receiver
   end
 end
 

@@ -2,10 +2,14 @@
 
 # Transaction Controller
 class TransactionController < ApplicationController
-  skip_before_action :verify_authenticity_token, only: [:create, :destroy]
+  skip_before_action :verify_authenticity_token, only: %i[create destroy]
 
   def index
     render json: Transaction.all
+  end
+
+  def search
+    render json: Transaction.where('payer ILIKE :id OR receiver ILIKE :id', id: "%#{params[:id]}%")
   end
 
   def create

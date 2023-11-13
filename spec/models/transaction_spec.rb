@@ -24,4 +24,10 @@ describe 'Trasaction' do
     transaction.valid?
     expect(transaction.errors[:name]).to include('Invalid payer key', 'Invalid receiver key')
   end
+  it 'payer and receiver key are equals' do
+    key = UserPix.new(username: 'Test', keytype: 'EMAIL', key: 'email@test.com')
+    transaction = Transaction.new(payer: key.id, receiver: key.id, price: 10)
+    transaction.valid?
+    expect(transaction.errors[:name]).to include('Payer equals to receiver key')
+  end
 end
